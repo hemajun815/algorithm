@@ -1,3 +1,4 @@
+# windows
 target = out.exe
 cc = g++
 libs = -lpthread
