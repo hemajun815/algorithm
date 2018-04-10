@@ -23,6 +23,19 @@ ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) {
     return p;
 }
 
+ListNode* FindKthToTail2(ListNode* pListHead, unsigned int k) {
+    ListNode * p = pListHead;
+    ListNode * q = p;
+    int i = 0;
+    for (; p != NULL; i++)
+    {
+        if (i >= k)
+            q = q->next;
+        p = p->next;
+    }
+    return i < k ? NULL : q;
+}
+
 int main(int argc, char const *argv[])
 {
     int a[] = {1,2,3,4,5,6,7,8,9};
@@ -45,7 +58,9 @@ int main(int argc, char const *argv[])
         p = p->next;
     }
     cout << endl << FindKthToTail(header, 3)->val;
+    cout << endl << FindKthToTail2(header, 3)->val;
     cout << endl << FindKthToTail(header, 5)->val;
+    cout << endl << FindKthToTail2(header, 5)->val;
     cout << endl << FindKthToTail(header, 7)->val << endl;
     return 0;
 }
