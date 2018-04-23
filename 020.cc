@@ -8,16 +8,15 @@ public:
         this->m_data.push_back(value);
     }
     void pop() {
-        this->m_data.erase(this->m_data.end() - 1);
+        this->m_data.pop_back();
     }
     int top() {
-        if (0 == this->m_data.size()) return int(NULL);
-        return this->m_data.at(0);
+        return this->m_data.back();
     }
     int min() {
-        if (0 == this->m_data.size()) return int(NULL);
+        if (this->m_data.empty()) return int(NULL);
         int m = this->top();
-        for (int i=1; i<this->m_data.size(); i++)
+        for (int i=0; i<this->m_data.size()-1; i++)
             if (m > this->m_data.at(i))
                 m = this->m_data.at(i);
         return m;
