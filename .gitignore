@@ -1,7 +1,0 @@
-.gitignore
-
-# vscode
-.vscode
-
-# output
-*.out
