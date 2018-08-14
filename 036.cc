@@ -10,7 +10,7 @@ class Solution
     {
         int ret = 0;
         for (int i = end - 1; i >= start; i--)
-            ret += (arr[i] - '0') * pow(10, end - 1 - i);
+            ret += (arr[i] - '0') * pow(10.0f, float(end - 1 - i));
         return ret;
     }
 
