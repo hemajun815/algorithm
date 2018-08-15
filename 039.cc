@@ -6,6 +6,7 @@ class Solution
     {
         int ret = n;
         ret && (ret += this->Sum1(n - 1));
+        // ret == 0 || (ret += this->Sum1(n - 1));
         return ret;
     }
 
@@ -19,7 +20,7 @@ class Solution
     int Sum_Solution(const int &n)
     {
         return this->Sum1(n);
-        return this->Sum2(n);
+        // return this->Sum2(n);
     }
 };
 
@@ -28,5 +29,6 @@ int main(int argc, char const *argv[])
     Solution *p = new Solution();
     std::cout << p->Sum_Solution(10) << std::endl;
     std::cout << p->Sum_Solution(4) << std::endl;
+    std::cin.get();
     return 0;
 }
