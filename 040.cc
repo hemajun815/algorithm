@@ -17,31 +17,43 @@ class Solution
   public:
     ListNode *deleteDuplication(ListNode *pHead)
     {
+        if (!pHead)
+            return NULL;
         std::vector<int> history;
-        std::vector<ListNode *> pointer;
-        ListNode *pre = pHead, *p = pHead->next;
         history.push_back(pHead->val);
+        std::vector<bool> flag;
+        flag.push_back(true);
+        ListNode *p = pHead->next;
         while (p)
         {
-            if (std::find(history.begin(), history.end(), p->val) != history.end())
+            std::vector<int>::iterator result = std::find(history.begin(), history.end(), p->val);
+            if (result != history.end())
             {
-                pointer.push_back(pre);
+                int idx = std::distance(history.begin(), result);
+                flag[idx] = false;
+                flag.push_back(false);
             }
             else
-            {
-                history.push_back(p->val);
-            }
-            pre = p;
+                flag.push_back(true);
+            history.push_back(p->val);
             p = p->next;
         }
-        for (unsigned i = 0; i < pointer.size(); i++)
+        for (int i = flag.size() - 1; i >= 0; i--)
         {
-            ListNode *p = pointer[i];
-            ListNode *q = p->next;
-            p->next = q->next;
-            delete q;
+            if (!flag[i])
+                history.erase(history.begin() + i);
         }
-        return pHead;
+        if (history.size() == 0)
+            return NULL;
+        ListNode *newList = new ListNode(history[0]);
+        p = newList;
+        for (unsigned i = 1; i < history.size(); i++)
+        {
+            ListNode *q = new ListNode(history[i]);
+            p->next = q;
+            p = p->next;
+        }
+        return newList;
     }
 };
 
