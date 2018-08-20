@@ -30,32 +30,31 @@ class Solution
                     count = (count + 1) % this->mod;
         return (left + right + count) % this->mod;
     }
-    int InversePairsByMergeSort(std::vector<int> &data, const int &start, const int &end)
+    int InversePairsByMergeSort(std::vector<int> &data, std::vector<int> &tmp, const int &start, const int &end)
     {
         if (start < end)
         {
             auto mid = start + (end - start) / 2;
-            auto left = this->InversePairsByMergeSort(data, start, mid);
-            auto right = this->InversePairsByMergeSort(data, mid + 1, end);
+            auto left = this->InversePairsByMergeSort(data, tmp, start, mid);
+            auto right = this->InversePairsByMergeSort(data, tmp, mid + 1, end);
             auto count = (left + right) % this->mod;
-            auto tmp = new std::vector<int>(end - start + 1);
-            auto k = 0, i = start, j = mid + 1;
+            auto k = start, i = start, j = mid + 1;
             while (i != mid + 1 && j != end + 1)
             {
                 if (data.at(i) > data.at(j))
                 {
-                    tmp->at(k++) = data.at(j++);
+                    tmp.at(k++) = data.at(j++);
                     count = (count + (mid - i + 1)) % this->mod;
                 }
                 else
-                    tmp->at(k++) = data.at(i++);
+                    tmp.at(k++) = data.at(i++);
             }
             while (i != mid + 1)
-                tmp->at(k++) = data.at(i++);
+                tmp.at(k++) = data.at(i++);
             while (j != end + 1)
-                tmp->at(k++) = data.at(j++);
-            for (unsigned idx = 0; idx < tmp->size(); idx++)
-                data.at(start + idx) = tmp->at(idx);
+                tmp.at(k++) = data.at(j++);
+            for (int idx = start; idx <= end; idx++)
+                data.at(idx) = tmp.at(idx);
             return count;
         }
         return 0;
@@ -68,7 +67,8 @@ class Solution
             return 0;
         // return this->InversePairs(data, 0);
         // return this->InversePairs(data, 0, data.size());
-        return this->InversePairsByMergeSort(data, 0, data.size() - 1);
+        std::vector<int> tmp(data.size());
+        return this->InversePairsByMergeSort(data, tmp, 0, data.size() - 1);
     }
 };
 
