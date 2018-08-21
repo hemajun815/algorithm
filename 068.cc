@@ -112,6 +112,54 @@ std::vector<int> selection_sort(const std::vector<int> &data)
     return *ret;
 }
 
+/**
+ * 堆排序核心
+ * */
+void heap_sort_core(std::vector<int> &data, const int &start, const int &end)
+{
+    auto j = start;
+    auto tmp = data.at(j);
+    for (auto i = j * 2 + 1; i < end; i = i * 2 + 1)
+    {
+        if (i + 1 < end && data.at(i) < data.at(i + 1)) // 若右节点值大于左节点，i指向右节点。
+            i++;
+        if (data.at(i) > tmp) // 子节点大于父节点，将子节点赋值给父节点，并以子节点作为新的父节点。
+        {
+            data.at(j) = data.at(i);
+            j = i;
+        }
+        else
+            break;
+    }
+    data.at(j) = tmp;
+}
+
+/**
+ * 堆排序
+ * */
+std::vector<int> heap_sort(const std::vector<int> &data)
+{
+    auto ret = new std::vector<int>(data.begin(), data.end());
+    // 开始：构建大顶堆
+    for (int i = ret->size() / 2 - 1; i >= 0; i--)
+    {
+        heap_sort_core(*ret, i, ret->size());
+    }
+    // 结束：构建大顶堆
+    // 开始：调整堆结构
+    for (auto i = ret->size() - 1; i > 0; i--)
+    {
+        // 开始：交换堆顶和末尾元素
+        auto tmp = ret->at(0);
+        ret->at(0) = ret->at(i);
+        ret->at(i) = tmp;
+        // 结束：交换堆顶和末尾元素
+        heap_sort_core(*ret, 0, i);
+    }
+    // 结束：调整堆结构
+    return *ret;
+}
+
 int main(int argc, char const *argv[])
 {
     const auto num_count = 15;
@@ -124,6 +172,8 @@ int main(int argc, char const *argv[])
     print(bubble_sort(data));
     std::cout << "Selection Sort: ";
     print(selection_sort(data));
+    std::cout << "Heap Sort: ";
+    print(heap_sort(data));
     std::cin.get();
     return 0;
 }
