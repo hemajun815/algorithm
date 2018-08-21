@@ -89,6 +89,29 @@ std::vector<int> bubble_sort(const std::vector<int> &data)
     return *ret;
 }
 
+/**
+ * 选择排序
+ * */
+std::vector<int> selection_sort(const std::vector<int> &data)
+{
+    auto ret = new std::vector<int>(data.begin(), data.end());
+    for (unsigned i = 0; i < ret->size(); i++)
+    {
+        auto idx = i;
+        auto min = ret->at(i);
+        for (unsigned j = i + 1; j < ret->size(); j++)
+            if (ret->at(j) < min)
+            {
+                idx = j;
+                min = ret->at(j);
+            }
+        auto tmp = ret->at(idx);
+        ret->at(idx) = ret->at(i);
+        ret->at(i) = tmp;
+    }
+    return *ret;
+}
+
 int main(int argc, char const *argv[])
 {
     const auto num_count = 15;
@@ -99,6 +122,8 @@ int main(int argc, char const *argv[])
     print(merge_sort(data));
     std::cout << "Bubble Sort: ";
     print(bubble_sort(data));
+    std::cout << "Selection Sort: ";
+    print(selection_sort(data));
     std::cin.get();
     return 0;
 }
