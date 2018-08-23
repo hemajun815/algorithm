@@ -179,6 +179,40 @@ std::vector<int> insertion_sort(const std::vector<int> &data)
     return *ret;
 }
 
+/**
+ * 快速排序核心
+ * */
+void quick_sort_core(std::vector<int> &data, const int &left, const int &right)
+{
+    if (left < right) // 左边小于右边，表示还没能完全整理成一组。
+    {
+        auto i = left, j = right, key = data.at(i);
+        while (i < j) // 控制在当前组内寻找。
+        {
+            while (i < j && key <= data.at(j)) // 把大于Key的值放到右边。
+                j--;
+            data.at(i) = data.at(j);
+            while (i < j && key >= data.at(i)) // 把小于Key的值放到左边。
+                i++;
+            data.at(j) = data.at(i);
+        }
+        data.at(i) = key;
+        quick_sort_core(data, left, i - 1);
+        quick_sort_core(data, i + 1, right);
+    }
+}
+
+/**
+ * 快速排序
+ * */
+std::vector<int> quick_sort(const std::vector<int> &data)
+{
+    auto ret = new std::vector<int>(data.begin(), data.end());
+    if (data.size() > 1)
+        quick_sort_core(*ret, 0, data.size() - 1);
+    return *ret;
+}
+
 int main(int argc, char const *argv[])
 {
     const auto num_count = 15;
@@ -195,6 +229,8 @@ int main(int argc, char const *argv[])
     print(heap_sort(data));
     std::cout << "Insertion Sort: ";
     print(insertion_sort(data));
+    std::cout << "Quick Sort: ";
+    print(quick_sort(data));
     std::cin.get();
     return 0;
 }
