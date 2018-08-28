@@ -208,5 +208,5 @@
     - 题目描述：Given a binary tree, find its minimum depth. The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
     - 实现源码：[069.cc](./069.cc)
 - evaluate reverse polish notation
-    - 题目描述：Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are+,-,*,/. Each operand may be an integer or another expression. ["2", "1", "+", "3", "*"] -> ((2 + 1) * 3) -> 9; ["4", "13", "5", "/", "+"] -> (4 + (13 / 5)) -> 6.
+    - 题目描述：Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are+,-,\*,/. Each operand may be an integer or another expression. ["2", "1", "+", "3", "\*"] -> ((2 + 1) * 3) -> 9; ["4", "13", "5", "/", "+"] -> (4 + (13 / 5)) -> 6.
     - 实现源码：[070.cc](./070.cc)
