@@ -204,3 +204,6 @@
 - 排序
     - 题目描述：经典排序算法（归并排序、冒泡排序、选择排序、堆排序、插入排序、快速排序）。
     - 实现源码：[068.cc](./068.cc)
+- minimum depth of binary tree
+    - 题目描述：Given a binary tree, find its minimum depth. The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+    - 实现源码：[069.cc](./069.cc)
