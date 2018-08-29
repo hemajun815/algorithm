@@ -216,3 +216,6 @@
 - sum root to leaf numbers
     - 题目描述：Given a binary tree containing digits from0-9only, each root-to-leaf path could represent a number. An example is the root-to-leaf path 1->2->3 which represents the number123. Find the total sum of all root-to-leaf numbers.
     - 实现源码：[072.cc](./072.cc)
+- path sum
+    - 题目描述：Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
+    - 实现源码：[073.cc](./073.cc)
