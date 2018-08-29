@@ -210,3 +210,6 @@
 - evaluate reverse polish notation
     - 题目描述：Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are+,-,\*,/. Each operand may be an integer or another expression. ["2", "1", "+", "3", "\*"] -> ((2 + 1) * 3) -> 9; ["4", "13", "5", "/", "+"] -> (4 + (13 / 5)) -> 6.
     - 实现源码：[070.cc](./070.cc)
+- word break
+    - 题目描述：Given a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words. For example, given s ="leetcode", dict =["leet", "code"]. Return true because "leetcode" can be segmented as "leet code".
+    - 实现源码：[071.cc](./071.cc)
