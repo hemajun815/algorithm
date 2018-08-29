@@ -10,11 +10,9 @@ class Solution
     bool wordBreak(string s, unordered_set<string> &dict)
     {
         auto len = s.length();
-        auto flags = new bool[len + 1]; // flags[i]: s[0, i]是否可分。
-        for (auto i = 0u; i <= len; i++)
-            flags[i] = false;
+        auto flags = new bool[len + 1](); // flags[i]: s[0, i]是否可分。
         flags[0] = true;
-        for (auto pos = 1u; pos <= len; pos++) // flags[pos] = s[0, i] && s[i+1, pos]
+        for (auto pos = 1u; pos <= len; pos++) // flags[pos] = s[0, i]是否可分 && s[i+1, pos]是否存在于集合中。
         {
             for (auto i = 0u; i < pos; i++)
             {
