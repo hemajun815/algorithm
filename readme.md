@@ -219,3 +219,6 @@
 - path sum
     - 题目描述：Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
     - 实现源码：[073.cc](./073.cc)
+- rotate image
+    - 题目描述：You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).
+    - 实现源码：[074.cc](./074.cc)
