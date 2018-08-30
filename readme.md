@@ -222,3 +222,15 @@
 - rotate image
     - 题目描述：You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).
     - 实现源码：[074.cc](./074.cc)
+- search in rotated sorted array
+    - 题目描述：Suppose a sorted array is rotated at some pivot unknown to you beforehand. (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2). You are given a target value to search. If found in the array return its index, otherwise return -1. You may assume no duplicate exists in the array.
+    - 实现源码：[075.cc](./075.cc)
+- remove duplicates from sorted array
+    - 题目描述：Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length. Do not allocate extra space for another array, you must do this in place with constant memory. For example, Given input array A =[1,1,2], Your function should return length = 2, and A is now [1,2].
+    - 实现源码：[076.cc](./076.cc)
+- remove duplicates from sorted array ii
+    - 题目描述：Follow up for "Remove Duplicates": What if duplicates are allowed at most twice? For example, Given sorted array A =[1,1,1,2,2,3], Your function should return length = 5, and A is now [1,1,2,2,3].
+    - 实现源码：[077.cc](./077.cc)
+- remove nth node from end of list
+    - 题目实现：Given a linked list, remove the nth node from the end of list and return its head. For example,    Given linked list: 1->2->3->4->5, and n = 2. After removing the second node from the end, the linked list becomes 1->2->3->5. Note: Given n will always be valid. Try to do this in one pass.
+    - 实现源码：[078.cc](./078.cc)
