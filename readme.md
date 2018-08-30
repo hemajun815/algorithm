@@ -213,3 +213,12 @@
 - word break
     - 题目描述：Given a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words. For example, given s ="leetcode", dict =["leet", "code"]. Return true because "leetcode" can be segmented as "leet code".
     - 实现源码：[071.cc](./071.cc)
+- sum root to leaf numbers
+    - 题目描述：Given a binary tree containing digits from0-9only, each root-to-leaf path could represent a number. An example is the root-to-leaf path 1->2->3 which represents the number123. Find the total sum of all root-to-leaf numbers.
+    - 实现源码：[072.cc](./072.cc)
+- path sum
+    - 题目描述：Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
+    - 实现源码：[073.cc](./073.cc)
+- rotate image
+    - 题目描述：You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).
+    - 实现源码：[074.cc](./074.cc)
