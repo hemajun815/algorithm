@@ -237,3 +237,6 @@
 - remove elements
     - 题目描述：Given an array and a value, remove all instances of that value in place and return the new length. The order of elements can be changed. It doesn't matter what you leave beyond the new length.
     - 实现源码：[079.cc](./079.cc)
+- 循环小数
+    - 题目描述：给出被除数和除数，求出循环小数的开始位置（小数点后面的位数）和循环长度。无循环则开始位置为结束位置，长度为0。
+    - 实现源码：[080.cc](./080.cc)
