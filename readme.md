@@ -240,3 +240,6 @@
 - 循环小数
     - 题目描述：给出被除数和除数，求出循环小数的开始位置（小数点后面的位数）和循环长度。无循环则开始位置为结束位置，长度为0。
     - 实现源码：[080.cc](./080.cc)
+- linked list cycle
+    - 题目描述：Given a linked list, determine if it has a cycle in it. Follow up: Can you solve it without using extra space?
+    - 实现源码：[081.cc](./081.cc)
