@@ -249,3 +249,6 @@
 - word ladder
     - 题目描述：Given two words (start and end), and a dictionary, find the length of shortest transformation sequence from start to end, such that: Only one letter can be changed at a time, Each intermediate word must exist in the dictionary. For example, Given: start ="hit", end ="cog", dict =["hot","dot","dog","lot","log"], As one shortest transformation is"hit" -> "hot" -> "dot" -> "dog" -> "cog", return its length 5. Note: Return 0 if there is no such transformation sequence.
     - 实现源码：[083.cc](./083.cc)
+- 翻转数组的前n项和
+    - 题目描述：给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4…, 每隔m个符号翻转一次, 最初符号为‘-’。例如n = 8, m = 2, 数列就是: -1, -2, +3, +4, -5, -6, +7, +8. 而n = 4, m = 1, 数列就是: -1, +2, -3, + 4. 试求出该数组的前n项和。
+    - 实现源码：[084.cc](./084.cc)
