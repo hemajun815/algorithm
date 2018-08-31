@@ -3,23 +3,15 @@
 
 using namespace std;
 
-void solution(int list[], int n, int start, int k, vector<vector<int>> *result)
-{
-    for (auto i = start; i < n; i++)
-    {
-        k -= list[i];
-        if (k == 0)
-        {
-            result->push_back(vector<int>());
-        }
-        else
-        {
-            solution(list, n, i + 1, k, result);
-        }
-        k += list[i];
-    }
-}
-
+/**
+ * list: 歌曲列表；
+ * n: list长度；
+ * i: 递归起始位置；
+ * tmp: 存储所选歌曲的下标；
+ * j: tmp的当前位置，即选择了的歌曲数；
+ * k: 剩下的歌曲长度目标；
+ * result: 所有可能的结果；
+ * */
 void solution_core(const int *list, const int &n, const int &i, int *tmp, int j, int k, vector<vector<int>> *result)
 {
     for (auto pos = i; pos < n; pos++)
