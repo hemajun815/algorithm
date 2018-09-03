@@ -6,24 +6,38 @@ int solution(int **&arr, const int &height, const int &width, const int &water)
     for (auto i = 0; i < height; i++)
         flag[i] = new bool[width]();
     auto count = 0;
+    // 水从上面来
     for (auto i = 0; i < height; i++)
-    {
         for (auto j = 0; j < width; j++)
-        {
-            if (water >= arr[i][j])
+            if (!flag[i][j] && water >= arr[i][j] && (i == 0 || flag[i - 1][j]))
             {
-                auto up = ((i == 0 || flag[i - 1][j]));          // 水从上面来
-                auto down = (i == height - 1 || flag[i + 1][j]); // 水从下面来
-                auto left = (j == 0 || flag[i][j - 1]);          // 水从左边来
-                auto right = (j == width - 1) || flag[i][j + 1]; // 水从右边来
-                if (up || down || left || right)
-                {
-                    flag[i][j] = true;
-                    count++;
-                }
+                flag[i][j] = true;
+                count++;
             }
-        }
-    }
+    // 水从下面来
+    for (auto i = height - 1; i >= 0; i--)
+        for (auto j = 0; j < width; j++)
+            if (!flag[i][j] && water >= arr[i][j] && (i == height - 1 || flag[i + 1][j]))
+            {
+                flag[i][j] = true;
+                count++;
+            }
+    // 水从左边来
+    for (auto j = 0; j < width; j++)
+        for (auto i = 0; i < height; i++)
+            if (!flag[i][j] && water >= arr[i][j] && (j == 0 || flag[i][j - 1]))
+            {
+                flag[i][j] = true;
+                count++;
+            }
+    // 水从右边来
+    for (auto j = width - 1; j >= 0; j--)
+        for (auto i = 0; i < height; i++)
+            if (!flag[i][j] && water >= arr[i][j] && (j == width - 1 || flag[i][j + 1]))
+            {
+                flag[i][j] = true;
+                count++;
+            }
     return height * width - count;
 }
 
@@ -76,6 +90,24 @@ int main(int argc, char const *argv[])
      * 1 4 5 2
      * */
     std::cout << solution(arr, 4, 4, 3) << std::endl; // 12
+    delete[] arr;
+    arr = new int *[5]();
+    int arr3[][4] = {2, 5, 4, 1, 4, 1, 1, 5, 5, 1, 1, 4, 1, 2, 5, 2};
+    for (auto i = 0; i < 4; i++)
+    {
+        arr[i] = new int[4]();
+        for (auto j = 0; j < 4; j++)
+            arr[i][j] = arr3[i][j];
+    }
+    /**
+     * 4 4 3
+     * 2 5 4 1
+     * 4 1 1 5
+     * 5 1 1 4
+     * 1 2 5 2
+     * */
+    std::cout << solution(arr, 4, 4, 3) << std::endl; // 7
+    delete[] arr;
     std::cin.get();
     return 0;
 }
