@@ -264,3 +264,6 @@
 - single number
     - 题目描述：Given an array of integers, every element appears twice except for one. Find that single one. Note: Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
     - 实现源码：[088.cc](088.cc)
+- single number ii
+    - 题目描述：Given an array of integers, every element appears three times except for one. Find that single one. Note: Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+    - 实现源码：[089.cc](089.cc)
