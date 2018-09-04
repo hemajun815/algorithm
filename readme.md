@@ -258,3 +258,6 @@
 - 不被淹没的陆地面积
     - 题目描述：给定全球海平面上升x的情况下，计算不被淹没的陆地面积。如果存在盆地（群山环绕，中间低）的情况，若群山均不被淹没，则盆地不被淹没。现在为了简化问题，每个单位面积为一整数，且水总时从外围开始涨起来，且水只能上下左右流动。输入描述：第一行输入三个整数，1<=height<=100表示地图的高，1<=width<=100表示地图的宽，0<=waterlevel<=9999表示水位，接下来输入height行，每行width个正整数，每个整数表示单位面积的海拔。输出描述：输出一个数字，表示没被淹没的单位陆地数。
     - 实现源码：[086.cc](./086.cc)
+- gas station
+    - 题目描述：There are N gas stations along a circular route, where the amount of gas at station i is gas[i]. You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations. Return the starting gas station's index if you can travel around the circuit once, otherwise return -1. Note: The solution is guaranteed to be unique.
+    - 实现源码：[087.cc](087.cc)
