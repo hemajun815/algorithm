@@ -267,3 +267,6 @@
 - single number ii
     - 题目描述：Given an array of integers, every element appears three times except for one. Find that single one. Note: Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
     - 实现源码：[089.cc](089.cc)
+- remove duplicates from sorted linked list
+    - 题目描述：Given a sorted linked list, delete all duplicates such that each element appear only once. For example, Given1->1->2, return1->2. Given1->1->2->3->3, return1->2->3.
+    - 实现源码：[090.cc](090.cc)
