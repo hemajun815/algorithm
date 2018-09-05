@@ -276,3 +276,6 @@
 - sort linked list
     - 题目描述：Sort a linked list in O(n log n) time using constant space complexity.
     - 实现源码：[092.cc](./092.cc)
+- inertion sort linked list
+    - 题目描述：Sort a linked list using insertion sort.
+    - 实现源码：[093.cc](./093.cc)
