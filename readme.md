@@ -270,3 +270,6 @@
 - remove duplicates from sorted linked list
     - 题目描述：Given a sorted linked list, delete all duplicates such that each element appear only once. For example, Given1->1->2, return1->2. Given1->1->2->3->3, return1->2->3.
     - 实现源码：[090.cc](090.cc)
+- remove duplicates from sorted linked list ii
+    - 题目描述：Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. For example, Given1->2->3->3->4->4->5, return1->2->5. Given1->1->1->2->3, return2->3.
+    - 实现源码：[091.cc](091.cc)
