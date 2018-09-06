@@ -285,3 +285,6 @@
 - valid number
     - 题目描述：Validate if a given string is numeric.
     - 实现源码：[cc](./cc/095.cc)
+- merge two sorted linked list
+    - 题目描述：Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+    - 实现源码：[cc](./cc/096.cc)
