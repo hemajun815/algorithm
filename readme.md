@@ -279,3 +279,6 @@
 - inertion sort linked list
     - 题目描述：Sort a linked list using insertion sort.
     - 实现源码：[cc](./cc/093.cc)
+- plus one
+    - 题目描述：Given a number represented as an array of digits, plus one to the number. （给定一个数组，里面存着0-9的数字，组合起来是一个整数，先要求在这个整数上加一，结果仍然是一个存在各位数字的数组。）
+    - 实现源码：[cc](./cc/094.cc)
