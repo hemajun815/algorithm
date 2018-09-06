@@ -288,3 +288,7 @@
 - merge two sorted linked list
     - 题目描述：Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
     - 实现源码：[cc](./cc/096.cc)
+- add binary
+    - 题目描述：Given two binary strings, return their sum (also a binary string). For example, a ="11" b ="1" Return"100".
+    - 实现源码：[cc](./cc/097.cc)
+
