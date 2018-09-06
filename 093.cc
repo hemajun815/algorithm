@@ -46,6 +46,44 @@ class Solution
         delete array;
         return head;
     }
+    /**
+     * 思路：
+     * 1. 寻找比前赴节点val小的节点
+     * 2. 从链表中移除该节点
+     * 3. 将移除的节点插入到其正确的位置
+     * */
+    ListNode *insertionSortList2(ListNode *head)
+    {
+        if (!head || !head->next)
+            return head;
+        auto p = head;
+        while (p && p->next)
+        {
+            if (p->val <= p->next->val)
+                p = p->next;
+            else // p->val > q->next-val
+            {
+                // 移除p->next，并记录为q
+                auto q = p->next;
+                p->next = q->next;
+                // 重新插入节点q
+                if (q->val < head->val) // 比头节点还小，更新头节点
+                {
+                    q->next = head;
+                    head = q;
+                }
+                else // 寻找合适的位置，插入q
+                {
+                    auto o = head;
+                    while (o->next && o->next != p->next && o->next->val < q->val)
+                        o = o->next;
+                    q->next = o->next;
+                    o->next = q;
+                }
+            }
+        }
+        return head;
+    }
 };
 
 void print(const ListNode *head)
@@ -67,7 +105,8 @@ int main(int argc, char const *argv[])
     head->next->next->next = new ListNode(2);
     head->next->next->next->next = new ListNode(1);
     print(head);
-    auto result = (new Solution())->insertionSortList(head);
+    // auto result = (new Solution())->insertionSortList1(head);
+    auto result = (new Solution())->insertionSortList2(head);
     print(result);
     cin.get();
     return 0;
