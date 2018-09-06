@@ -279,3 +279,18 @@
 - inertion sort linked list
     - 题目描述：Sort a linked list using insertion sort.
     - 实现源码：[cc](./cc/093.cc)
+- plus one
+    - 题目描述：Given a number represented as an array of digits, plus one to the number. （给定一个数组，里面存着0-9的数字，组合起来是一个整数，先要求在这个整数上加一，结果仍然是一个存在各位数字的数组。）
+    - 实现源码：[cc](./cc/094.cc)
+- valid number
+    - 题目描述：Validate if a given string is numeric.
+    - 实现源码：[cc](./cc/095.cc)
+- merge two sorted linked list
+    - 题目描述：Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+    - 实现源码：[cc](./cc/096.cc)
+- add binary
+    - 题目描述：Given two binary strings, return their sum (also a binary string). For example, a ="11" b ="1" Return"100".
+    - 实现源码：[cc](./cc/097.cc)
+- rotate list
+    - 题目描述：Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given1->2->3->4->5->NULL and k =2, return4->5->1->2->3->NULL.
+    - 实现源码：[cc](./cc/098.cc)
