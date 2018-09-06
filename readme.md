@@ -291,4 +291,6 @@
 - add binary
     - 题目描述：Given two binary strings, return their sum (also a binary string). For example, a ="11" b ="1" Return"100".
     - 实现源码：[cc](./cc/097.cc)
-
+- rotate list
+    - 题目描述：Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given1->2->3->4->5->NULL and k =2, return4->5->1->2->3->NULL.
+    - 实现源码：[cc](./cc/098.cc)
