@@ -14,10 +14,10 @@ class Solution
         str.erase(0, str.find_first_not_of(" "));
         str.erase(str.find_last_not_of(" ") + 1);
         auto number = false;          // 是否出现过数字
-        auto eOrE = false;            // 是否出现过e或者E
-        auto numberAfterE = false;    // e或者E后面是否有数字
-        auto sign = false;            // 是否出现过+或者-
-        auto numberAfterSign = false; // +或者-后面是否有数字
+        auto eOrE = false;            // 是否出现过E/e
+        auto numberAfterE = false;    // E/e后面是否有数字
+        auto sign = false;            // 是否出现过+/-
+        auto numberAfterSign = false; // +/-后面是否有数字
         auto point = false;           // 是否出现过小数点
         // 循环每个字符
         for (auto i = 0u; i < str.length(); i++)
@@ -33,18 +33,15 @@ class Solution
             // e或者E
             else if (ch == 'e' || ch == 'E')
             {
-                // 第二个E/e，返回false
-                if (eOrE)
-                    return false;
-                // 没有出现过数字
-                if (!number)
+                // 第二个E/e或者没有出现过数字，返回false
+                if (eOrE || !number)
                     return false;
                 eOrE = true;
             }
             // +或者-
             else if (ch == '+' || ch == '-')
             {
-                // +/-不在首位或者前一位不是E/e
+                // +/-不在首位或者前一位不是E/e，返回false
                 if (i != 0 && str.at(i - 1) != 'e' && str.at(i - 1) != 'E')
                     return false;
                 sign = true;
@@ -52,11 +49,8 @@ class Solution
             // 小数点
             else if (ch == '.')
             {
-                // 第二个小数点，返回false
-                if (point)
-                    return false;
-                // E/e后面不允许小数点
-                if (eOrE)
+                // 第二个小数点或者E/e后面出现小数点，返回false
+                if (point || eOrE)
                     return false;
                 point = true;
             }
