@@ -294,3 +294,6 @@
 - rotate list
     - 题目描述：Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given1->2->3->4->5->NULL and k =2, return4->5->1->2->3->NULL.
     - 实现源码：[cc](./cc/098.cc)
+- 字符串中第一个重复的字符
+    - 题目描述：给定一个长度为N的字符串，若存在重复字符，返回第一个，否则返回NULL。
+    - 实现源码：[cc](./cc/099.cc)
