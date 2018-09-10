@@ -5,13 +5,8 @@ using namespace std;
 void solution(const int &dividend, const int &divisor)
 {
     auto a = dividend, b = divisor;
-    // 循环去掉整数部分。
+    // 去掉整数部分。
     auto c = a % b;
-    while (a > b)
-    {
-        a = c;
-        c = a % b;
-    }
 
     auto cs = new int[b]();  // 记录余数。
     auto pos = new int[b](); // 记录余数的位置。
