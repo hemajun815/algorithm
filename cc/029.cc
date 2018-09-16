@@ -1,51 +1,36 @@
 #include <iostream>
 #include <vector>
-#include <map>
 
 using namespace std;
 
-class Solution {
-public:
-    int MoreThanHalfNum_Solution(vector<int> numbers) {
-        map<int, int> m;
-        int num = 0, count = 0;
-        for (int i = 0; i < numbers.size(); ++i)
+class Solution
+{
+  public:
+    int MoreThanHalfNum_Solution(vector<int> numbers)
+    {
+        auto result = 0;
+        if (!numbers.empty())
         {
-            int number = numbers.at(i);
-            map<int, int>::iterator iter = m.find(number);
-            if (iter->first == number)
+            auto count = 0;
+            for (auto it = numbers.begin(); it != numbers.end(); it++)
             {
-                iter->second += 2;
-                if (iter->second > count)
-                {
-                    num = number;
-                    count = iter->second;
-                }
+                result = count == 0 ? *it : result;
+                count = result == *it ? count + 1 : count - 1;
             }
-            else
-            {
-                m.insert(pair<int, int>(number, 2));
-                if (2 > count)
-                {
-                    num = number;
-                    count = 2;
-                }
-            }
+            count = 0;
+            for (auto it = numbers.begin(); it != numbers.end(); it++)
+                count = *it == result ? count + 1 : count;
+            result = count * 2 > (int)numbers.size() ? result : 0;
         }
-        if (count > numbers.size())
-            return num;
-        return 0;
+        return result;
     }
 };
 
 int main(int argc, char const *argv[])
 {
-    vector<int> vct;
-    vct.push_back(1);
-    vct.push_back(2);
-    vct.push_back(1);
-    vct.push_back(3);
-    vct.push_back(1);
-    cout << (new Solution())->MoreThanHalfNum_Solution(vct) << endl;
+    vector<int> vct0 = {1, 2, 1, 3, 1};
+    cout << (new Solution())->MoreThanHalfNum_Solution(vct0) << endl; // 1
+    vector<int> vct1 = {1, 2, 2, 3, 1};
+    cout << (new Solution())->MoreThanHalfNum_Solution(vct1) << endl; // 0
     return 0;
 }
