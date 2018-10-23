@@ -303,3 +303,6 @@
 - LRU Cache
     - 题目描述：LRU是Least Recently Used的缩写，翻译过来就是“最近最少使用”，LRU Cache就是使用这种原理实现，简单的说就是缓存一定量的数据，当超过设定的阈值时就把一些过期的数据删除掉。请设计算法实现这一机制。
     - 实现源码：[cc](./cc/101.cc)
+- reorder list
+    - 题目描述：Given a singly linked list L: L0→L1→…→Ln-1→Ln, reorder it to: L0→Ln →L1→Ln-1→L2→Ln-2→… You must do this in-place without altering the nodes' values. For example, Given{1,2,3,4}, reorder it to{1,4,2,3}.
+    - 实现源码：[cc](./cc/102.cc)
