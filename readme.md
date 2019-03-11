@@ -315,3 +315,6 @@
 - best time to buy and sell stock ii
     - 题目描述：Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
     - 实现源码：[cc](./cc/105.cc)
+- 纸牌游戏
+    - 题目描述：现有一叠纸牌，共有n张，从上往下依次编号为1到n。现在对这叠纸牌反复执行操作——将顶端的牌扔掉，然后将新的顶端的牌置于底部，直到只剩下一张纸牌为止。求被丢掉纸牌的编号。
+    - 实现源码：[cc](./cc/106.cc)
