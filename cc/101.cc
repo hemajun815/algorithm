@@ -1,6 +1,5 @@
 #include <iostream>
 #include <unordered_map>
-#include <list>
 using namespace std;
 
 template <typename Key, typename Value>
@@ -20,69 +19,69 @@ template <typename Key, typename Value>
 class LRUCache
 {
   private:
-    unsigned size;
-    unordered_map<Key, Entry<Key, Value>> *map;
-    Entry<Key, Value> *first;
-    Entry<Key, Value> *last;
+    unsigned _size;
+    unordered_map<Key, Entry<Key, Value>> *_map;
+    Entry<Key, Value> *_first;
+    Entry<Key, Value> *_last;
 
   private:
     void make_to_first(Key const &k)
     {
-        auto it = this->map->find(k);
-        if (!this->first && !this->last) // 第一个节点
-            this->first = this->last = &it->second;
+        auto it = this->_map->find(k);
+        if (!this->_first && !this->_last) // 第一个节点
+            this->_first = this->_last = &it->second;
         else
         {
             if (!it->second.pre && !it->second.next) // 插入节点
             {
-                it->second.next = this->first;
-                this->first->pre = &it->second;
-                this->first = &it->second;
+                it->second.next = this->_first;
+                this->_first->pre = &it->second;
+                this->_first = &it->second;
             }
-            else if (this->first != &it->second) // 更新节点
+            else if (this->_first != &it->second) // 更新节点
             {
                 it->second.pre->next = it->second.next;
-                if (this->last != &it->second)
+                if (this->_last != &it->second)
                     it->second.next->pre = it->second.pre;
                 else
-                    this->last = it->second.pre;
+                    this->_last = it->second.pre;
                 it->second.pre = NULL;
-                it->second.next = this->first;
-                this->first->pre = &it->second;
-                this->first = &it->second;
+                it->second.next = this->_first;
+                this->_first->pre = &it->second;
+                this->_first = &it->second;
             }
         }
     }
     void remove_last()
     {
-        auto entry = this->last;
-        this->last = entry->pre;
-        this->last->next = NULL;
-        this->map->erase(entry->key);
+        auto entry = this->_last;
+        this->_last = entry->pre;
+        this->_last->next = NULL;
+        this->_map->erase(entry->key);
     }
 
   public:
-    LRUCache(unsigned const &size) : size(size), map(new unordered_map<Key, Entry<Key, Value>>()), first(NULL), last(NULL)
+    LRUCache(unsigned const &size) : _size(size), _map(new unordered_map<Key, Entry<Key, Value>>()), _first(NULL), _last(NULL)
     {
     }
     void put(Key const &k, Value const &v)
     {
         auto entry = new Entry<Key, Value>(k, v);
-        auto it = this->map->find(k);
-        if (it != this->map->end())
+        auto it = this->_map->find(k);
+        if (it != this->_map->end())
             it->second = *entry;
         else
         {
-            this->map->insert(make_pair<>(k, *entry));
-            if (this->map->size() > this->size)
+            this->_map->insert(make_pair<>(k, *entry));
+            if (this->_map->size() > this->_size)
                 this->remove_last();
         }
         this->make_to_first(k);
     }
     Value *get(Key const &k)
     {
-        auto it = this->map->find(k);
-        if (it != this->map->end())
+        auto it = this->_map->find(k);
+        if (it != this->_map->end())
         {
             this->make_to_first(k);
             return &it->second.value;
@@ -124,6 +123,5 @@ int main(int argc, char const *argv[])
         cout << *v << endl;
     else
         cout << "NULL" << endl; // NULL
-    cin.get();
     return 0;
 }
